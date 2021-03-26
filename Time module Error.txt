@@ -1,0 +1,16 @@
+INSTED OF ...... IN TIME MODULE 
+
+" if win32 or jython:
+time_func = time.clock
+else:
+time_func = time.time "
+
+REPLACE THIS
+
+" if win32 or jython:
+try: # Python 3.4+
+preferred_clock = time.perf_counter
+except AttributeError: # Earlier than Python 3.
+preferred_clock = time.clock
+else:
+time_func = time.time "
